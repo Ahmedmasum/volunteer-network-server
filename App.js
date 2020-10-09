@@ -29,9 +29,7 @@ client.connect((err) => {
     .collection("registeredEvent");
 
   app.post("/addEvents", (req, res) => {
-    const events = req.body;
-
-    eventsCollection.insertOne(events).then((result) => {
+    eventsCollection.insertOne(req.body).then((result) => {
       console.log(result);
       res.send(result.insertedCount > 0);
     });
