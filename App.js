@@ -29,7 +29,7 @@ client.connect((err) => {
     .collection("registeredEvent");
 
   app.post("/addEvents", (req, res) => {
-    const events = { data: req.body };
+    const events = {req.body };
 
     eventsCollection.insertOne(events).then((result) => {
       console.log(result);
